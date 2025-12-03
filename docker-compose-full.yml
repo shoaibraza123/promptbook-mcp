@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+  # Watcher service - monitors and organizes sessions
+  prompt-organizer:
+    build: .
+    container_name: copilot-prompt-organizer
+    volumes:
+      - ./sessions:/sessions
+      - ./prompts:/app/prompts
+    environment:
+      - SESSIONS_DIR=/sessions
+      - OUTPUT_DIR=/app
+      - PYTHONUNBUFFERED=1
+      - ENABLE_RAG=true
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # MCP Server - exposes prompt library via MCP protocol
+  mcp-server:
+    build: .
+    container_name: prompt-library-mcp-server
+    command: python mcp_server.py
+    volumes:
+      - ./prompts:/app/prompts
+    environment:
+      - PROMPTS_DIR=/app/prompts
+      - PYTHONUNBUFFERED=1
+    ports:
+      - "3000:3000"
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

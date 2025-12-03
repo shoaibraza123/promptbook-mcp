@@ -1,0 +1,13 @@
+{
+  "mcpServers": {
+    "prompt-library": {
+      "command": "python",
+      "args": [
+        "/Users/isaac/Development_Projects/ia_tools/mcp_tools/mcp_server.py"
+      ],
+      "env": {
+        "PROMPTS_DIR": "/Users/isaac/Development_Projects/ia_tools/mcp_tools/prompts"
+      }
+    }
+  }
+}

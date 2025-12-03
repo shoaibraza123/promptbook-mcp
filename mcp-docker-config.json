@@ -1,0 +1,18 @@
+{
+  "Prompt-Library": {
+    "type": "local",
+    "command": "docker",
+    "tools": ["*"],
+    "args": [
+      "run",
+      "-i",
+      "--rm",
+      "-v", "/Users/isaac/Development_Projects/ia_tools/mcp_tools/prompts:/app/prompts:ro",
+      "-v", "/Users/isaac/Development_Projects/ia_tools/mcp_tools/prompts/.vectordb:/app/prompts/.vectordb:rw",
+      "-e", "PROMPTS_DIR=/app/prompts",
+      "-e", "PYTHONUNBUFFERED=1",
+      "mcp-tools-prompt-library:latest",
+      "python", "mcp_server.py"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+Looking in indexes: https://isaacpalomero:****@pypi.dev.synsights.cloud/simple
+Collecting types-requests
+  Using cached types_requests-2.32.4.20250913-py3-none-any.whl.metadata (2.0 kB)
+Requirement already satisfied: urllib3>=2 in ./.venv/lib/python3.13/site-packages (from types-requests) (2.3.0)
+Using cached types_requests-2.32.4.20250913-py3-none-any.whl (20 kB)
+Installing collected packages: types-requests
+Successfully installed types-requests-2.32.4.20250913

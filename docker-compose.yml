@@ -1,0 +1,21 @@
+version: '3.8'
+
+services:
+  prompt-organizer:
+    build: .
+    container_name: copilot-prompt-organizer
+    volumes:
+      # Mount the directory where you export Copilot sessions
+      - ./sessions:/sessions
+      # Mount the output directory for organized prompts
+      - ./prompts:/app/prompts
+    environment:
+      - SESSIONS_DIR=/sessions
+      - OUTPUT_DIR=/app
+      - PYTHONUNBUFFERED=1
+    restart: unless-stopped
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"

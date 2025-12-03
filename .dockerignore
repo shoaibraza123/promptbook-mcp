@@ -1,0 +1,14 @@
+*.md
+!README.md
+!CHANGELOG.md
+sessions/
+prompts/
+tests/
+docs/
+__pycache__/
+*.pyc
+.mypy_cache/
+.pytest_cache/
+.git/
+.gitignore
+*.log

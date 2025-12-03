@@ -1,0 +1,19 @@
+# Prompt organizer generated files
+sessions/
+prompts/.vectordb/
+prompts/index.json
+__pycache__/
+*.pyc
+mcp_server.log
+.venv/
+.env
+
+# Personal Copilot configurations
+.github/instructions/
+.github/agents/
+
+# Test artifacts
+.pytest_cache/
+htmlcov/
+.coverage
+*.cover
